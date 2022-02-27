@@ -19,12 +19,40 @@
  */
 
 import QtQuick
+import QtQml
+import QtQuick.Controls
 import QtQuick.Window
+import QtQuick.Layouts
 
 Window {
-    width: 640
-    height: 480
+    width: 400
+    height: 500
     visible: true
     title: qsTr("RAVEN Downloader")
 
+    RowLayout {
+        id: urlContainer
+        anchors {
+            left: parent.left
+            right: parent.right
+            top: parent.top
+            topMargin: 5
+            leftMargin: 5
+            rightMargin: 5
+        }
+        TextField {
+            id: urlField
+            Layout.fillWidth: true
+
+            placeholderText: qsTr("Enter your link")
+            focus: true
+        }
+        Button {
+            id: submitButton
+
+            highlighted: true
+            text: "Submit"
+            //onClicked:
+        }
+    }
 }
